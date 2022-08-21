@@ -1,0 +1,119 @@
+
+
+body{
+    margin:0px;
+    padding: 0px;
+}
+
+#heading{
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(127, 183, 126);
+    font-size: 30px;
+    word-spacing: 50px;
+}
+#button-Start-timer{
+background-color: rgb(177, 215, 180);
+padding: 1px 820px;
+}
+#button-Start-timer button{
+    margin: 5px;
+    padding: 15px 55px;
+    display: flex;   
+    font-size: larger;
+    border-radius: 10px;
+}
+#button-Start-timer h2{
+    padding: 0px 35px;
+    font-size: 30px;
+}
+#quesTitle{
+    background-color: rgb(247, 246, 220);
+    margin: 0px;
+    padding: 0px;
+}
+#quesTitle h2{
+    text-align: center;
+    margin: 0px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    font-size: 30px;
+}
+#quesAns{
+    background-color: rgb(247, 246, 220);
+    border: 1px solid black;
+    padding: 100px 200px;
+    margin: 10px 130px;
+}
+#progress{
+    text-align: center;
+    font-size: 30px;
+    margin: 0px;
+}
+#choices {
+    display: flex;
+    flex-direction: column;
+}
+#previous{
+    margin: 5px;
+    padding: 15px 55px;  
+    font-size: larger;
+    border-radius: 10px;
+}
+#next{
+    margin: 5px;
+    padding: 15px 55px; 
+    font-size: larger;
+    border-radius: 10px;
+}
+#submit{
+    margin: 5px;
+    padding: 15px 55px; 
+    font-size: larger;
+    border-radius: 10px;
+}
+#previous-nxt-submit-btn{
+    background-color: rgb(255, 192, 144);
+    padding: 30px 600px;
+    display: flex;
+    flex-direction: row;
+}
+#previous-nxt-btn button{
+    display: flex;
+    flex-direction: row;
+}
+
+#btn{
+    text-align: left;
+    margin: 5px 10px;
+    padding: 15px 55px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: rgb(255, 192, 144);
+}
+#btn:active{
+    background-color: rgb(127, 183, 126);
+}
+#questions{
+    background-color: rgb(247, 246, 220);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#questionContainer{
+    background-color: rgb(247, 246, 220);
+    margin: 0px 2px;
+    padding: 2px 2px;
+}
+#quesTitleContainer{
+    background-color: rgb(247, 246, 220);
+    margin: 0px 2px;
+    padding: 2px 2px;
+}
