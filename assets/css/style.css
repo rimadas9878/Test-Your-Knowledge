@@ -1,55 +1,75 @@
-
-
-body{
-    margin:0px;
-    padding: 0px;
+main{
+    margin: 0px 50px;
 }
 
 #heading{
     text-align: center;
-    padding: 5px;
+    padding: 1px;
     background-color: rgb(127, 183, 126);
     font-size: 30px;
     word-spacing: 50px;
 }
-#button-Start-timer{
+#timerContainer{
 background-color: rgb(177, 215, 180);
 padding: 1px 820px;
 }
-#button-Start-timer button{
-    margin: 5px;
-    padding: 15px 55px;
-    display: flex;   
-    font-size: larger;
-    border-radius: 10px;
-}
-#button-Start-timer h2{
-    padding: 0px 35px;
-    font-size: 30px;
+
+#timer{
+    text-align: center;
+    font-size: 40px;
 }
 #quesTitle{
     background-color: rgb(247, 246, 220);
     margin: 0px;
     padding: 0px;
 }
-#quesTitle h2{
-    text-align: center;
-    margin: 0px;
-    padding-top: 8px;
-    padding-bottom: 0px;
-    padding-left: 15px;
-    font-size: 30px;
-}
-#quesAns{
+#quesTitleContainer{
     background-color: rgb(247, 246, 220);
-    border: 1px solid black;
-    padding: 100px 200px;
-    margin: 10px 130px;
+    margin: 0px 0px;
+    padding: 80px 80px;
+}
+
+#startIntro{
+
+    padding:0px 50px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    line-height: 40px;
+}
+#start{
+
+    margin: 5% 45%;
+    padding: 15px 15px;  
+    font-size: larger;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
 #progress{
     text-align: center;
     font-size: 30px;
     margin: 0px;
+
+}
+#questionContainer{
+    background-color: rgb(247, 246, 220);
+    margin: 0px 1px;
+    padding: 1px 1px;
+
+}
+#quesAns{
+    background-color: rgb(247, 246, 220);
+    border: 1px solid black;
+    padding: 80px 80px;
+    margin: 10px 80px;
+}
+#question{
+    background-color: rgb(247, 246, 220);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 #choices {
     display: flex;
@@ -72,12 +92,14 @@ padding: 1px 820px;
     padding: 15px 55px; 
     font-size: larger;
     border-radius: 10px;
+    display: none;
 }
 #previous-nxt-submit-btn{
     background-color: rgb(255, 192, 144);
     padding: 30px 600px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 #previous-nxt-btn button{
     display: flex;
@@ -101,19 +123,12 @@ padding: 1px 820px;
 #btn:active{
     background-color: rgb(127, 183, 126);
 }
-#questions{
-    background-color: rgb(247, 246, 220);
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 15px;
+#btn.correct{
+    background-color: green;
 }
-#questionContainer{
-    background-color: rgb(247, 246, 220);
-    margin: 0px 2px;
-    padding: 2px 2px;
+#btn.wrong{
+    background-color: red;
 }
-#quesTitleContainer{
-    background-color: rgb(247, 246, 220);
-    margin: 0px 2px;
-    padding: 2px 2px;
+.hide{
+    display: none;
 }
