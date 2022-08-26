@@ -6,55 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Your Knowledge</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
     <main>
-        <section id="heading">
-            <header>
-                <h1>HTML .CSS {SCRIPT}</h1>
-            </header>
-        </section>
-
-        <section id="timerContainer">
-            <h2 id="timer">00:00</h2>
-        </section>
-
+        <header>
+            <section id="heading">
+                <h1>Quiz Game</h1>
+            </section>
+            <section id="timerContainer">
+                <h2 id="timer"></h2>
+            </section>
+        </header>
+        <!-- <section id="questionAndIntroContainer"> -->
         <section id="quesTitleContainer">
             <p id="startIntro">Try to answer the following code-related questions within the time limit.<br> Keep in
                 mind that incorrect answer will penalize your score time by 15 seconds.</p>
             <button id="start">Start Quiz</button>
-
-        </section>
         </section>
 
-        <section id="questionContainer">
+        <section id="questionAndChoicesContainer" class="quizScore">
             <section id="quesAns" class="hide">
-                <section id="question">
-                    Question goes here
-                </section>
+
+                    <h2 id="question">Question Text</h2>
+
                 <section id="choices">
-                    <button class="btn1" id="btn">
-                        <span class="choice1"></span>
-                    </button>
-                    <button class="btn2" id="btn">
-                        <span class="choice2"></span>
-                    </button>
-                    <button class="btn3" id="btn">
-                        <span class="choice3"></span>
-                    </button>
-                    <button class="btn4" id="btn">
-                        <span class="choice4"></span>
-                    </button>
+                    <ul>
+                        <li>
+                            <input type="radio" id="a" class="answer">
+                            <label id="aText" for="a">Question</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="b" class="answer">
+                            <label id="bText" for="b">Question</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="c" class="answer">
+                            <label id="cText" for="c">Question</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="d" class="answer">
+                            <label id="dText" for="d">Question</label>
+                        </li>
+                    </ul>
+                </section>
+                <section id="submitBtn">
+                    <button id="submit" class="hide">Submit</button>
                 </section>
             </section>
-        </section>
-
-        <section id="previous-nxt-submit-btn">
-            <button id="previous">Previous</button>
-            <button id="next">Next</button>
-            <button id="submit">Submit</button>
         </section>
 
     </main>

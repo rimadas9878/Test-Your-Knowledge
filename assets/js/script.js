@@ -1,153 +1,186 @@
 const questionsList = [
     {
-        Question: 'What does HTML stand for?',
-        Answer: [
-            { text: 'Hypertext Machine language.', correct: false },
-            { text: 'Hypertext and links markup language.', correct: false },
-            { text: 'Hypertext Markup Language', correct: true },
-            { text: 'Hightext machine language', correct: false }
-        ]
+        question: 'What does HTML stand for?',
+        a: 'Hypertext Machine language.',
+        b: 'Hypertext and links markup language.',
+        c: 'Hypertext Markup Language',
+        d: 'Hightext machine language',
+        correct: 'c'
     },
     {
-        Question: 'Which of the following HTML Elements is used for making any text bold?',
-        Answer: [
-            { text: '<p>', correct: false },
-            { text: '<i>', correct: false },
-            { text: '<li>', correct: false },
-            { text: '<b>', correct: true }
-        ]
+        question: 'Which of the following HTML Elements is used for making any text bold?',
+        a: '<p>',
+        b: '<i>',
+        c: '<li>',
+        d: '<b>',
+        correct: 'd'
+
     },
     {
-        Question: 'Which of the following attributes is used to add link to any element?',
-        Answer: [
-            { text: 'link', correct: false },
-            { text: 'ref', correct: false },
-            { text: 'href', correct: true },
-            { text: 'newref', correct: false }
-        ]
+        question: 'Which of the following attributes is used to add link to any element?',
+        a: 'link',
+        b: 'ref',
+        c: 'href',
+        d: 'newref',
+        correct: 'c'
+
     },
     {
-        Question: 'Which of the following property is used to control the position of an image in the background?',
-        Answer: [
-            { text: 'background-color', correct: false },
-            { text: 'background-image', correct: false },
-            { text: 'background-repeat', correct: false },
-            { text: 'background-position', correct: true }
-        ]
+        question: 'Which of the following property is used to control the position of an image in the background?',
+        a: 'background-color',
+        b: 'background-image',
+        c: 'background-repeat',
+        d: 'background-position',
+        correct: 'd'
     },
     {
-        Question: 'Which of the following property is used as shorthand to specify a number of other font properties?',
-        Answer: [
-            { text: 'font-size', correct: false },
-            { text: 'font', correct: true },
-            { text: 'font-variant', correct: false },
-            { text: 'font-weight', correct: false }
-        ]
+        question: 'Which of the following property is used as shorthand to specify a number of other font properties?',
+        a: 'font-size',
+        b: 'font',
+        c: 'font-variant',
+        d: 'font-weight',
+        correct: 'b'
+
     },
     {
-        Question: 'Which of the following property is used to set the width of an image border?',
-        Answer: [
-            { text: 'border', correct: true },
-            { text: 'height', correct: false },
-            { text: 'width', correct: false },
-            { text: '-moz-opacity', correct: false }
-        ]
+        question: 'Which of the following property is used to set the width of an image border?',
+        a: 'border',
+        b: 'height',
+        c: 'width',
+        d: '-moz-opacity',
+        correct: 'a'
     },
     {
-        Question: 'If you type "3 > 2 > 1 === false" in the console window, what result will you get?',
-        Answer: [
-            { text: 'True', correct: true },
-            { text: 'False', correct: false }
-        ]
+        question: 'Inside which HTML element do we put the JavaScript?',
+        a: '<javascript>',
+        b: '<js>',
+        c: '<script>',
+        d: '<scripting>',
+        correct: 'c'
+
     },
     {
-        Question: 'JavaScript is a ___ -side programming language',
-        Answer: [
-            { text: 'Client', correct: false },
-            { text: 'Server', correct: false },
-            { text: 'Both', correct: true },
-            { text: 'None', correct: false }
-        ]
+        question: 'JavaScript is a ___ -side programming language',
+        a: 'Client',
+        b: 'Server',
+        c: 'Both',
+        d: 'None',
+        correct: 'c'
+
     },
     {
-        Question: 'Which of the following will write the message “Hello DataFlair!” in an alert box?',
-        Answer: [
-            { text: 'alertBox(“Hello DataFlair!”);', correct: false },
-            { text: 'alert(Hello DataFlair!);', correct: false },
-            { text: 'msgAlert(“Hello DataFlair!”);', correct: false },
-            { text: 'alert(“Hello DataFlair!”);', correct: true }
-        ]
+        question: 'Which of the following will write the message “Hello DataFlair!” in an alert box?',
+        a: 'alertBox(“Hello DataFlair!”);',
+        b: 'alert(Hello DataFlair!);',
+        c: 'msgAlert(“Hello DataFlair!”);',
+        d: 'alert(“Hello DataFlair!”);',
+        correct: 'd'
     },
     {
-        Question: 'How do you find the minimum of x and y using JavaScript?',
-        Answer: [
-            { text: 'min(x,y);', correct: false },
-            { text: 'Math.min(x,y)', correct: true },
-            { text: 'Math.min(xy)', correct: false },
-            { text: 'min(xy);', correct: false }
-        ]
+        question: 'How do you find the minimum of x and y using JavaScript?',
+        a: 'min(x,y);',
+        b: 'Math.min(x,y)',
+        c: 'Math.min(xy)',
+        d: 'min(xy);',
+        correct: 'b'
     }
 ]
 
+const quiz = document.getElementsByClassName('quizScore');
+const answerChoice = document.querySelectorAll(".answer");
 const startbtn = document.getElementById('start');
 startbtn.addEventListener('click', startGame);
-const nextbtn = document.getElementById('next');
-nextbtn.addEventListener('click', nextQues);
-const prebtn = document.getElementById('previous');
-prebtn.addEventListener('click', previousQues);
-const instruction = document.getElementById('startIntro');
-const questionEl = document.getElementById('question');
-const choiceEl = document.getElementById('choices');
-const quesAnsContainer = document.getElementById('quesAns');
-const startAndIntroContainer = document.getElementById('quesTitleContainer');
-var currentQuestion = questionsList[0];
-const firstChoice = document.querySelector('.btn1')
-const secondChoice = document.querySelector('.btn2')
-const thirdChoice = document.querySelector('.btn3')
-const forthChoice = document.querySelector('.btn4')
-var currentQuestionIndex = 0;
 
+const questionAndChoices = document.getElementById('quesAns');
+const introContainer = document.getElementById('quesTitleContainer');
+const submitbtn = document.getElementById('submit');
+submitbtn.addEventListener('click', submitQuiz);
+
+
+const questionEl = document.getElementById('question');
+const aText = document.getElementById('aText');
+const bText = document.getElementById('bText');
+const cText = document.getElementById('cText');
+const dText = document.getElementById('dText');
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+
+function introHide() {
+    introContainer.classList.add('hide');
+    questionAndChoices.classList.remove('hide');
+    submitbtn.classList.remove('hide');
+}
 
 function startGame() {
-    startAndIntroContainer.classList.add('hide');
-    quesAnsContainer.classList.remove('hide');
-    getQuestion();
-    getChoices();
-    prebtn.disabled == true;
-    
+    introHide();
+    uniqueAnswer();
+    const currentQuestion = questionsList[currentQuestionIndex];
+    questionEl.innerText = currentQuestion.question;
+    aText.innerText = currentQuestion.a;
+    bText.innerText = currentQuestion.b;
+    cText.innerText = currentQuestion.c;
+    dText.innerText = currentQuestion.d;
+    setTime();
 
 }
-function getQuestion() {
+function getAnswer() {
+    var answer1 ;
 
-   questionEl.innerText = questionsList[currentQuestionIndex].Question;
+    answerChoice.forEach((answerSelected) => {
+        if (answerSelected.checked) {
+            answer1 = answerSelected.id;
+        }
+    });
 
-    
+    return answer1;
 }
 
-function getChoices() {
-    firstChoice.innerText = questionsList[currentQuestionIndex].Answer[0].text;
-    secondChoice.innerText = questionsList[currentQuestionIndex].Answer[1].text;
-    thirdChoice.innerText = questionsList[currentQuestionIndex].Answer[2].text;
-    forthChoice.innerText = questionsList[currentQuestionIndex].Answer[3].text;
-
-
+function uniqueAnswer() {
+    answerChoice.forEach((answerSelected) => {
+        answerSelected.checked = false;
+    }
+    );
 }
 
-function nextQues() {
-    
+console.log(questionsList[currentQuestionIndex].correct);
+
+function submitQuiz(){
+
+    var answer = getAnswer();
+    if (answer) {
+        if (answer === questionsList[currentQuestionIndex].correct) {
+            score++;
+        }
         currentQuestionIndex++;
-        getQuestion();
-        getChoices();
+    }
+    resultPage();
+   
 }
 
-function previousQues() {
-    currentQuestionIndex--;
-    getQuestion();
-    getChoices();
+function resultPage(){
+    getAnswer();
+        if (currentQuestionIndex < questionsList.length) {
+            startGame();
+        }
+        else {
+            quiz.innerHTML = `<h2>Your Result: ${score}/${questionsList.length}</h2>
+            <button onclick="location.reload()">Try Again</button>`;
+        }
+    };
+
+function setTime(){
+    var timeLeft = 60;
+    var counterInterval = setInterval(function(){
+        document.querySelector("#timer").innerHTML = timeLeft;
+        timeLeft--;
+        
+        if(timeLeft === 0)
+        {
+            clearInterval(counterInterval);
+            document.querySelector("#timer").innerHTML = "Done, Your time is up";
+        }
+    }, 1000)   
 }
-
-function submitQuiz() {
-
-}
-
-

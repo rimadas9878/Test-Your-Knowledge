@@ -1,134 +1,93 @@
-main{
-    margin: 0px 50px;
-}
-
-#heading{
-    text-align: center;
-    padding: 1px;
-    background-color: rgb(127, 183, 126);
-    font-size: 30px;
-    word-spacing: 50px;
-}
-#timerContainer{
-background-color: rgb(177, 215, 180);
-padding: 1px 820px;
-}
-
-#timer{
-    text-align: center;
-    font-size: 40px;
-}
-#quesTitle{
-    background-color: rgb(247, 246, 220);
+main {
     margin: 0px;
     padding: 0px;
-}
-#quesTitleContainer{
-    background-color: rgb(247, 246, 220);
-    margin: 0px 0px;
-    padding: 80px 80px;
+    border-radius: 20px;
 }
 
-#startIntro{
-
-    padding:0px 50px;
-    font-size: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    line-height: 40px;
-}
-#start{
-
-    margin: 5% 45%;
-    padding: 15px 15px;  
-    font-size: larger;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-}
-#progress{
-    text-align: center;
-    font-size: 30px;
-    margin: 0px;
-
-}
-#questionContainer{
-    background-color: rgb(247, 246, 220);
-    margin: 0px 1px;
-    padding: 1px 1px;
-
-}
-#quesAns{
-    background-color: rgb(247, 246, 220);
-    border: 1px solid black;
-    padding: 80px 80px;
-    margin: 10px 80px;
-}
-#question{
-    background-color: rgb(247, 246, 220);
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-#choices {
-    display: flex;
-    flex-direction: column;
-}
-#previous{
-    margin: 5px;
-    padding: 15px 55px;  
-    font-size: larger;
-    border-radius: 10px;
-}
-#next{
-    margin: 5px;
-    padding: 15px 55px; 
-    font-size: larger;
-    border-radius: 10px;
-}
-#submit{
-    margin: 5px;
-    padding: 15px 55px; 
-    font-size: larger;
-    border-radius: 10px;
-    display: none;
-}
-#previous-nxt-submit-btn{
-    background-color: rgb(255, 192, 144);
-    padding: 30px 600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-#previous-nxt-btn button{
-    display: flex;
-    flex-direction: row;
-}
-
-#btn{
-    text-align: left;
-    margin: 5px 10px;
-    padding: 15px 55px;
+body {
     width: 100%;
-    font-size: 20px;
-    border-radius: 5px;
+    background-image: linear-gradient(#F2A65A, #772F1A);   
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
 }
-#btn:hover{
-    cursor: pointer;
-    background-color: rgb(255, 192, 144);
+
+#heading {
+    background-color: rgb(18, 17, 17);
+    color: wheat;
+    width: 800px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15vh;
+    font-size: 50px;
 }
-#btn:active{
-    background-color: rgb(127, 183, 126);
-}
-#btn.correct{
-    background-color: green;
-}
-#btn.wrong{
-    background-color: red;
+#timerContainer{
+    text-align: center;
+    font-size: 40px;
+
 }
 .hide{
     display: none;
+}
+#quesTitleContainer{
+    background-color: white;
+    width: 800px;
+    height: 50px;
+    text-align: center;
+
+}
+#questionAndChoicesContainer {
+    background-color: white;
+    width: 800px;
+    height: 400px;
+    text-align: center;
+
+}
+
+#startIntro{
+    font-size: 20px;
+    padding: 50px 0px;
+}
+#start{
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+#start:hover{
+    background-color: #F2A65A;
+}
+#timer{
+    padding: 8px;
+}
+#quesAns{
+    padding: 30px;
+}
+#question{
+    padding: 10px;
+}
+
+label{
+    padding-left: 10px;
+}
+#submit{
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color: #F2A65A;
+}
+ul{
+    padding: 1px;
+}
+li{
+
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    padding-bottom: 20px;
+
 }
