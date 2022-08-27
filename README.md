@@ -4,6 +4,8 @@
 <li>There are 10 questions in total</li>
 <li>Once you answer them all you will be able to see the score</li>
 </ol>
+
+<h2>Pending Tasks</h2>
 <ol>
 <li>I am partially submitting the project as the timer doesn't work as expected</li>
 <li>Also the screen to enter the initials doesn't work yet</li>
