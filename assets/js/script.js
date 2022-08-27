@@ -86,101 +86,164 @@ const questionsList = [
     }
 ]
 
-const quiz = document.getElementsByClassName('quizScore');
-const answerChoice = document.querySelectorAll(".answer");
+// Starts the game
 const startbtn = document.getElementById('start');
 startbtn.addEventListener('click', startGame);
 
+//Question and Choice container
 const questionAndChoices = document.getElementById('quesAns');
-const introContainer = document.getElementById('quesTitleContainer');
-const submitbtn = document.getElementById('submit');
-submitbtn.addEventListener('click', submitQuiz);
 
-
+// Details related to questions and answers
 const questionEl = document.getElementById('question');
 const aText = document.getElementById('aText');
 const bText = document.getElementById('bText');
 const cText = document.getElementById('cText');
 const dText = document.getElementById('dText');
 
+// Time element
+var timerCount = document.getElementById('timer');
+
+
+// Result page content
+const gameScoreResult = document.getElementById('gameScoreResult')
+const scoreSection = document.getElementById("quizScore");
+
+//Name of radio buttons for choices
+const answerChoice = document.getElementsByName('answer');
+
+//Title element
+const introContainer = document.getElementById('quesTitleContainer');
+
+// Submit button event
+const submitbtn = document.getElementById('submit');
+submitbtn.addEventListener('click', submitBtn);
+
+const saveSection = document.getElementById('saveSection');
 
 let currentQuestionIndex = 0;
 let score = 0;
 
-
-function introHide() {
+function showAndHideIntroContainer() {
     introContainer.classList.add('hide');
+    scoreSection.classList.add('hide');
+    gameScoreResult.classList.add('hide');
     questionAndChoices.classList.remove('hide');
     submitbtn.classList.remove('hide');
 }
 
 function startGame() {
-    introHide();
-    uniqueAnswer();
+    showAndHideIntroContainer();
+    getQuestionAndChoices();
+    setTime();
+}
+
+function getQuestionAndChoices() {
     const currentQuestion = questionsList[currentQuestionIndex];
     questionEl.innerText = currentQuestion.question;
     aText.innerText = currentQuestion.a;
     bText.innerText = currentQuestion.b;
     cText.innerText = currentQuestion.c;
     dText.innerText = currentQuestion.d;
-    setTime();
 
 }
-function getAnswer() {
-    var answer1 ;
 
-    answerChoice.forEach((answerSelected) => {
-        if (answerSelected.checked) {
-            answer1 = answerSelected.id;
+var correctAnswer = questionsList[currentQuestionIndex].correct;
+
+var answer = 0;
+function getAnswer() {  
+    
+    answerChoice.forEach(function(element){
+        if(element.checked){
+            answer = element.id;                    
         }
     });
-
-    return answer1;
+    return answer;
 }
 
-function uniqueAnswer() {
-    answerChoice.forEach((answerSelected) => {
-        answerSelected.checked = false;
+function scoreIncrement() {
+    getAnswer();
+    if (answer == correctAnswer) {
+        score++;
+    }
+
+}
+function submitBtn() {
+    scoreIncrement()
+    currentQuestionIndex++;
+    clearPreviousSelectedAnswer();
+    resultPage();
+
+}
+
+function clearPreviousSelectedAnswer() {
+    answerChoice.forEach(function (element) {
+        element.checked = false;
     }
     );
 }
 
-console.log(questionsList[currentQuestionIndex].correct);
+function resultPage() {
 
-function submitQuiz(){
-
-    var answer = getAnswer();
-    if (answer) {
-        if (answer === questionsList[currentQuestionIndex].correct) {
-            score++;
-        }
-        currentQuestionIndex++;
+    if (currentQuestionIndex < questionsList.length) {
+        startGame();
     }
-    resultPage();
-   
+    else {
+        scoreSection.classList.remove('hide');
+        scoreSection.innerHTML = `<h2>Your Result: ${score}/${questionsList.length}</h2>`;
+    }
 }
 
-function resultPage(){
-    getAnswer();
-        if (currentQuestionIndex < questionsList.length) {
-            startGame();
-        }
-        else {
-            quiz.innerHTML = `<h2>Your Result: ${score}/${questionsList.length}</h2>
-            <button onclick="location.reload()">Try Again</button>`;
-        }
-    };
 
-function setTime(){
-    var timeLeft = 60;
-    var counterInterval = setInterval(function(){
-        document.querySelector("#timer").innerHTML = timeLeft;
-        timeLeft--;
+var secondsLeft = 60;
+
+function setTime() {
+    scoreSection.classList.remove('hide');
+    gameScoreResult.classList.remove('hide');
+
+    var intervalTime = setInterval(function () {
+        secondsLeft--;
+        timerCount.textContent = secondsLeft + " : seconds left";
+
+        if (secondsLeft == 0) {
+            clearInterval(intervalTime);
+        }
+    }, 1000)
+
+    scorePage();
+}
+
+function displayScore(){
+    if (currentQuestionIndex > questionsList.length){
+        scorePage();
+    }
+
+}
+
+var stdName = document.getElementById('studentName');
+var savebtn = document.getElementById('save');
+
+
+function scorePage() {
+         
+        var enterUserName = localStorage.getItem('userNameinput');
+        stdName.textContent = userNameinput;
+
+        savebtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            
+        var user = document.querySelector('#userName').value;
+
+        if(user === ""){
+            displayMessage("error", "Email cannot be blank");
+        }
+        else{
+            displayMessage("success", "Registered successfully");
         
-        if(timeLeft === 0)
-        {
-            clearInterval(counterInterval);
-            document.querySelector("#timer").innerHTML = "Done, Your time is up";
+        localStorage.setItem('user',user);
+        scorePage();
         }
-    }, 1000)   
+
+        })
 }
+
+

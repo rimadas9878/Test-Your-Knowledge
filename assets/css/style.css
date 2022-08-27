@@ -1,3 +1,4 @@
+
 main {
     margin: 0px;
     padding: 0px;
@@ -6,7 +7,7 @@ main {
 
 body {
     width: 100%;
-    background-image: linear-gradient(#F2A65A, #772F1A);   
+    background-image: linear-gradient(#D99EC9, #F6F0C4);   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +18,7 @@ body {
 #heading {
     background-color: rgb(18, 17, 17);
     color: wheat;
-    width: 800px;
+    width: 700px;
     height: 70px;
     text-align: center;
     display: flex;
@@ -31,19 +32,17 @@ body {
     font-size: 40px;
 
 }
-.hide{
-    display: none;
-}
+
 #quesTitleContainer{
     background-color: white;
-    width: 800px;
-    height: 50px;
+    width: 700px;
+    height: 10px;
     text-align: center;
 
 }
 #questionAndChoicesContainer {
     background-color: white;
-    width: 800px;
+    width: 700px;
     height: 400px;
     text-align: center;
 
@@ -90,4 +89,37 @@ li{
     padding: 10px;
     padding-bottom: 20px;
 
+}
+#quizScore{
+    padding-top: 5px;
+}
+
+#studentName{
+    padding: 10px 20px;
+}
+#savebtn{
+    display: flex;
+    align-items: center;
+    padding: 10px 110px;
+    margin: 5px 110px;
+}
+#savebtn{
+    padding: 10px 50px;
+    margin: 5px 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#savebtn:hover{
+    background-color: #F2A65A;
+}
+#gameScoreResult{
+    text-align: center;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.hide{
+    display: none;
 }

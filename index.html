@@ -16,48 +16,68 @@
             <section id="heading">
                 <h1>Quiz Game</h1>
             </section>
-            <section id="timerContainer">
-                <h2 id="timer"></h2>
-            </section>
         </header>
-        <!-- <section id="questionAndIntroContainer"> -->
+        <!-- Timer -->
+            <section id="timerContainer">
+                <section id="timer"></section>
+            </section>
+
+       <!-- The intro display and Start button -->
         <section id="quesTitleContainer">
             <p id="startIntro">Try to answer the following code-related questions within the time limit.<br> Keep in
                 mind that incorrect answer will penalize your score time by 15 seconds.</p>
             <button id="start">Start Quiz</button>
         </section>
 
-        <section id="questionAndChoicesContainer" class="quizScore">
+        <!-- Questions and answer container -->
+        <section id="questionAndChoicesContainer">
             <section id="quesAns" class="hide">
-
-                    <h2 id="question">Question Text</h2>
-
+                <h2 id="question">Question Text</h2>               
                 <section id="choices">
                     <ul>
                         <li>
-                            <input type="radio" id="a" class="answer">
+                            <input type="radio" id="a" class="answer" name="answer">
                             <label id="aText" for="a">Question</label>
                         </li>
                         <li>
-                            <input type="radio" id="b" class="answer">
+                            <input type="radio" id="b" class="answer" name="answer">
                             <label id="bText" for="b">Question</label>
                         </li>
                         <li>
-                            <input type="radio" id="c" class="answer">
+                            <input type="radio" id="c" class="answer" name="answer">
                             <label id="cText" for="c">Question</label>
                         </li>
                         <li>
-                            <input type="radio" id="d" class="answer">
+                            <input type="radio" id="d" class="answer" name="answer">
                             <label id="dText" for="d">Question</label>
                         </li>
                     </ul>
-                </section>
-                <section id="submitBtn">
-                    <button id="submit" class="hide">Submit</button>
+                    <!-- Submit button which will be displayed in all pages to submit the answer -->
+                    <section id="submitBtn">
+                        <button id="submit" class="hide">Submit</button>
+                    </section>
                 </section>
             </section>
         </section>
+                <!-- Score section which will be displayed at the end -->
+                <section id="scoreSection" >
+                    <p class="hide" id="quizScore"></p>
+                </section>
 
+                <!-- Section which will display Name along will the score -->
+
+                <section id="gameScoreResult" class="hide">
+                    <h2 class="hide">Score</h2>
+                    <form class="hide">
+                        <label id="userName" for="name">User Name</label>
+                        <input id="userName" type="text">
+                    </form>
+                    <section id="detailContainer" class="hide">
+                    <p id="userName">User Name: </p>
+                    <p id="gameScore">You scored : </p>
+                    <button  id="save">Save</button>
+                    </section>
+                </section>
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
