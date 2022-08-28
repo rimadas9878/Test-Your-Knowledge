@@ -1,11 +1,12 @@
 <h1>Assignment04-Test-Your-Knowledge</h1>
-<p>This assignment is about creating a quiz webpage</p>
+<p>This assignment is about creating a quiz webpage, and once the quiz or time is over score will be displayed</p>
 <ol>
-<li>There are 10 questions in total</li>
-<li>Once you answer them all you will be able to see the score page</li>
-<li>Or if the time is over, you wll see the score page</li>
-<li>Enter the name and click on submit</li>
-<li>You will see the name along with the score</li>
+<li>There are 10 questions which needs to be answered.</li>
+<li>Once you answer them all the 10 questions, you will able to see your score.</li>
+<li>If the time is over, you will see the score page.</li>
+<li>Enter the name and click on submit.</li>
+<li>You will see the name along with the score.</li>
+<li>If your answer is incoreect 5 seconds will be deducted from the total time.</li>
 </ol>
 
 
