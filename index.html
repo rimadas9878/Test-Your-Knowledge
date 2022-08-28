@@ -8,6 +8,7 @@
     <title>Test Your Knowledge</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/Images/quiz.jpeg">
 </head>
 
 <body>
@@ -18,21 +19,21 @@
             </section>
         </header>
         <!-- Timer -->
-            <section id="timerContainer">
-                <section id="timer"></section>
-            </section>
+        <section id="timerContainer">
+            <section id="timer"></section>
+        </section>
 
-       <!-- The intro display and Start button -->
+        <!-- The intro display and Start button -->
         <section id="quesTitleContainer">
             <p id="startIntro">Try to answer the following code-related questions within the time limit.<br> Keep in
                 mind that incorrect answer will penalize your score time by 15 seconds.</p>
             <button id="start">Start Quiz</button>
         </section>
-        
+
         <!-- Questions and answer container -->
         <section id="questionAndChoicesContainer">
             <section id="quesAns" class="hide">
-                <h2 id="question">Question Text</h2>               
+                <h2 id="question">Question Text</h2>
                 <section id="choices">
                     <ul>
                         <li>
@@ -59,25 +60,31 @@
                 </section>
             </section>
         </section>
-                <!-- Score section which will be displayed at the end -->
-                <section id="scoreSection" >
-                    <p class="hide" id="quizScore"></p>
-                </section>
+        <!-- Score section which will be displayed at the end -->
+        <section id="scoreSection">
+            <p class="hide" id="quizScore"></p>
+        </section>
 
-                <!-- Section which will display Name along will the score -->
+        <!-- Section will display Name along will the score -->
 
-                <section id="gameScoreResult" class="hide">
-                    <h2 class="hide">Score</h2>
-                    <form class="hide">
-                        <label id="userName" for="name">User Name</label>
-                        <input id="userName" type="text">
-                    </form>
-                    <section id="detailContainer" class="hide">
-                    <p id="userName">User Name: </p>
-                    <p id="gameScore">You scored : </p>
-                    <button  id="save">Save</button>
-                    </section>
-                </section>
+        <section id="gameScoreResult" class="hide">
+            <form id="scoreDetailsWithName" class="hide">
+                <h2 class="hide">Scores</h2>
+                <label for="name" id="userName">User Name</label>
+                <input type="text" id="domTextElement">
+                <button type="button" onclick="getValueInput()">
+                    Save
+                </button>
+                <br />
+                </br />
+                <h2 id="valueInput"></h2>
+            </form>
+
+        </section>
+<!-- 
+        <section id="resetGameButton">
+                <button  id="resetButton" class="hide">Reset the Game</button>
+        </section> -->
     </main>
     <script src="./assets/js/script.js"></script>
 </body>

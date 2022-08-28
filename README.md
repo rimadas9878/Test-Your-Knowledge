@@ -2,16 +2,13 @@
 <p>This assignment is about creating a quiz webpage</p>
 <ol>
 <li>There are 10 questions in total</li>
-<li>Once you answer them all you will be able to see the score</li>
+<li>Once you answer them all you will be able to see the score page</li>
+<li>Or if the time is over, you wll see the score page</li>
+<li>Enter the name and click on submit</li>
+<li>You will see the name along with the score</li>
 </ol>
 
-<h2>Pending Tasks</h2>
-<ol>
-<li>I am partially submitting the project as the timer doesn't work as expected</li>
-<li>Also the screen to enter the initials doesn't work yet</li>
-<li>The code is written but still it doesn't work</li>
-<li>Note: I will be resubmitting the project again</li>
-</ol>
+
 
 
 <h3>Link of Github</h3>

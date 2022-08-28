@@ -119,6 +119,7 @@ const submitbtn = document.getElementById('submit');
 submitbtn.addEventListener('click', submitBtn);
 
 const saveSection = document.getElementById('saveSection');
+const scoreDetailsWithName = document.getElementById('scoreDetailsWithName');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -132,9 +133,12 @@ function showAndHideIntroContainer() {
 }
 
 function startGame() {
+    startGameClickCounter++;
+    if (startGameClickCounter == 1) {
+        setTime();
+    }
     showAndHideIntroContainer();
     getQuestionAndChoices();
-    setTime();
 }
 
 function getQuestionAndChoices() {
@@ -149,30 +153,37 @@ function getQuestionAndChoices() {
 
 var correctAnswer = questionsList[currentQuestionIndex].correct;
 
-var answer = 0;
-function getAnswer() {  
-    
-    answerChoice.forEach(function(element){
-        if(element.checked){
-            answer = element.id;                    
+var answer = '0';
+function getAnswer() {
+    answerChoice.forEach(function (element) {
+        if (element.checked) {
+            answer = element.id; // e.g 'b'                    
         }
     });
     return answer;
 }
 
 function scoreIncrement() {
-    getAnswer();
+    // getAnswer();
+    console.log('correct answer ' + correctAnswer);
+    console.log('answer ' + getAnswer());
     if (answer == correctAnswer) {
         score++;
+    } else {
+        secondsLeft = secondsLeft - 5;
     }
 
 }
 function submitBtn() {
     scoreIncrement()
     currentQuestionIndex++;
+    if (currentQuestionIndex < 10) { correctAnswer = questionsList[currentQuestionIndex].correct; }
+    else {
+        document.getElementById("questionAndChoicesContainer").innerText = `Score is : ${score}/10`;
+        scorePage();
+    }
     clearPreviousSelectedAnswer();
     resultPage();
-
 }
 
 function clearPreviousSelectedAnswer() {
@@ -183,67 +194,38 @@ function clearPreviousSelectedAnswer() {
 }
 
 function resultPage() {
-
     if (currentQuestionIndex < questionsList.length) {
         startGame();
     }
-    else {
-        scoreSection.classList.remove('hide');
-        scoreSection.innerHTML = `<h2>Your Result: ${score}/${questionsList.length}</h2>`;
-    }
 }
 
-
 var secondsLeft = 60;
+var startGameClickCounter = 0;
+
 
 function setTime() {
-    scoreSection.classList.remove('hide');
-    gameScoreResult.classList.remove('hide');
-
     var intervalTime = setInterval(function () {
         secondsLeft--;
-        timerCount.textContent = secondsLeft + " : seconds left";
-
-        if (secondsLeft == 0) {
+        if (secondsLeft < 0) { timerCount.textContent = 0 + " : seconds left"; }
+        else {
+            timerCount.textContent = secondsLeft + " : seconds left";
+        }
+        if (secondsLeft <= 0) {
             clearInterval(intervalTime);
+            document.getElementById("questionAndChoicesContainer").innerText = `Time is up! Score is : ${score}/10`;
+            scorePage();
         }
     }, 1000)
 
-    scorePage();
 }
+var scoreBoard = document.getElementById('scoreBoard')
 
-function displayScore(){
-    if (currentQuestionIndex > questionsList.length){
-        scorePage();
-    }
-
-}
-
-var stdName = document.getElementById('studentName');
-var savebtn = document.getElementById('save');
-
+const getValueInput = () =>{
+    let inputValue = document.getElementById('domTextElement').value;
+    document.getElementById("valueInput").innerText = inputValue + ' has a score of ' + score + '/10';
+  }
 
 function scorePage() {
-         
-        var enterUserName = localStorage.getItem('userNameinput');
-        stdName.textContent = userNameinput;
-
-        savebtn.addEventListener("click", function (event) {
-            event.preventDefault();
-            
-        var user = document.querySelector('#userName').value;
-
-        if(user === ""){
-            displayMessage("error", "Email cannot be blank");
-        }
-        else{
-            displayMessage("success", "Registered successfully");
-        
-        localStorage.setItem('user',user);
-        scorePage();
-        }
-
-        })
+    scoreSection.classList.remove('hide');
+    scoreDetailsWithName.classList.remove('hide');
 }
-
-

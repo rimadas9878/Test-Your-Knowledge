@@ -97,21 +97,38 @@ li{
 #studentName{
     padding: 10px 20px;
 }
-#savebtn{
+#save{
     display: flex;
     align-items: center;
     padding: 10px 110px;
-    margin: 5px 110px;
+    margin: 50px 110px;
 }
-#savebtn{
-    padding: 10px 50px;
-    margin: 5px 50px;
+#save{
+    padding: 10px 100px;
+    margin: 10px 600px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#savebtn:hover{
+#save:hover{
+    background-color: #F2A65A;
+}
+#reset{
+    display: flex;
+    align-items: center;
+    padding: 10px 110px;
+    margin: 50px 110px;
+}
+#reset{
+    padding: 10px 100px;
+    margin: 10px 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#reset:hover{
     background-color: #F2A65A;
 }
 #gameScoreResult{
@@ -119,6 +136,10 @@ li{
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
+}
+#scoreDetailsWithName{
+    margin:-380px;
+
 }
 .hide{
     display: none;
